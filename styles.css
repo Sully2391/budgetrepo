@@ -1,0 +1,8 @@
+/* budget dashboard toggling */
+.active {
+    opacity : 1;
+}
+
+.hide {
+    display: none;
+}

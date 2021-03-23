@@ -25,3 +25,13 @@ const incomeAmount = document.getElementById("income-amount-input");
 const addExpense= document.querySelector(".add-expense");
 const expenseTitle = document.getElementById("expense-title-input");
 const expenseAmount = document.getElementById("expense-amount-input");
+
+//FUNCTIONS FOR TOGGLE
+function active( element ){
+    element.classList.add("active");
+}
+
+function show( element ) {
+    element.classList.remove("hide");
+}
+//EVENT LISTENERS FOR TOGGLE
