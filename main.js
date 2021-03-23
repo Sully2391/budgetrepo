@@ -34,4 +34,34 @@ function active( element ){
 function show( element ) {
     element.classList.remove("hide");
 }
+
+function hide(elementsArray){
+    elementsArray.forEach( element => {
+            element.classList.add("hide");
+        });
+}
+
+function inactive(elementsArray){
+    elementsArray.forEach( element => {
+        element.classList.remove("active");
+    });
+}
 //EVENT LISTENERS FOR TOGGLE
+expenseBtn.addEventListener('click', function(){
+    active(expenseBtn);
+    inactive([incomeBtn, allBtn]);
+    show(expenseEl);
+    hide([incomeEl, allEl]);
+});
+incomeBtn.addEventListener('click', function(){
+    active(incomeBtn);
+    inactive([expenseBtn, allBtn]);
+    show(incomeEl);
+    hide([expenseEl, allEl]);
+});
+allBtn.addEventListener('click', function(){
+    active(allBtn);
+    inactive([expenseBtn, incomeBtn]);
+    show(allEl);
+    hide([expenseEl, incomeEl]);
+});
