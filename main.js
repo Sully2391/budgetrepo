@@ -52,6 +52,7 @@ function inactive(elements){
         element.classList.remove("active");
     });
 }
+
 //EVENT LISTENERS FOR TOGGLE
 expenseBtn.addEventListener('click', function(){
     active(expenseBtn);
@@ -71,6 +72,34 @@ allBtn.addEventListener('click', function(){
     show(allEl);
     hide([expenseEl, incomeEl]);
 });
+
+//FUNCTIONS FOR ENTRY ADDITIONS
+function updateUI(){
+    income = calculateTotal("income", ENTRY_LIST);
+    outcome = calculateTotal("outcome", ENTRY_LIST);
+    balance = calculateBalance(income, outcome);
+}
+
+function clearInput(inputs) {
+    inputs.forEach( input => {
+        input.value = "";
+    })
+}
+
+function calculateTotal (type, list) {
+    let sum = 0;
+    list.forEach( entry => {
+        if ( entry.type === type ) {
+            sum += entry.amount;
+        }
+    })
+    return sum;
+}
+
+function calculateBalance(income, outcome) {
+    return income - outcome;
+}
+
 //EVENT LISTENERS FOR ADDITION OF ENTRIES
 addExpense.addEventListener("click", function(){
     //do not run if either input is empty
@@ -83,8 +112,9 @@ addExpense.addEventListener("click", function(){
     }
     ENTRY_LIST.push(expense);
 
-    updateUI(); //this function to be defined ****
+    updateUI(); 
     clearInput([expenseTitle.value, expenseAmount.value]);
+    console.log(ENTRY_LIST);
 });
 
 addIncome.addEventListener("click", function(){
@@ -98,6 +128,7 @@ addIncome.addEventListener("click", function(){
     }
     ENTRY_LIST.push(income);
 
-    updateUI();  //this function to be defined ****
+    updateUI();  
     clearInput([incomeTitle.value, incomeAmount.value]);
+    console.log(ENTRY_LIST);
 });
