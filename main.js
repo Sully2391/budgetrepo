@@ -28,6 +28,9 @@ const expenseAmount = document.getElementById("expense-amount-input");
 
 //VARIABLES
 let ENTRY_LIST = [];
+let balance = 0, income = 0, outcome = 0;
+
+const DELETE = "delete", EDIT = "edit";
 
 //FUNCTIONS FOR TOGGLE
 function active( element ){
@@ -38,14 +41,14 @@ function show( element ) {
     element.classList.remove("hide");
 }
 
-function hide(elementsArray){
-    elementsArray.forEach( element => {
+function hide(elements){
+    elements.forEach( element => {
             element.classList.add("hide");
         });
 }
 
-function inactive(elementsArray){
-    elementsArray.forEach( element => {
+function inactive(elements){
+    elements.forEach( element => {
         element.classList.remove("active");
     });
 }
@@ -67,4 +70,16 @@ allBtn.addEventListener('click', function(){
     inactive([expenseBtn, incomeBtn]);
     show(allEl);
     hide([expenseEl, incomeEl]);
+});
+//EVENT LISTENERS FOR ADDITION OF ENTRIES
+addExpense.addEventListener("click", function(){
+    //do not run if either input is empty
+    if( expenseTitle.value === '' || expenseAmount.value === '' ) return;
+    // add/save entry to list
+    let expense = {
+        type : "expense",
+        title : expenseTitle.value,
+        amount : expenseAmount.value
+    }
+    ENTRY_LIST.push(expense);
 });
