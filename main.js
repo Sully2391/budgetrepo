@@ -76,8 +76,44 @@ allBtn.addEventListener('click', function(){
 //FUNCTIONS FOR ENTRY ADDITIONS
 function updateUI(){
     income = calculateTotal("income", ENTRY_LIST);
-    outcome = calculateTotal("outcome", ENTRY_LIST);
-    balance = calculateBalance(income, outcome);
+    outcome = calculateTotal("expense", ENTRY_LIST);
+    balance = Math.abs(calculateBalance(income, outcome));
+
+    //determine sign of balance
+    let sign = (income >= outcome) ? "$" : "-$"
+
+    //updateUI
+    balanceEl.innerHTML = `<small>${sign}</small>${balance}`;
+    outcomeTotalEl.innerHTML = `<small>$</small>${outcome}`;
+    incomeTotalEl.innerHTML = `<small>$</small>${income}`;
+
+    clearElement( [expenseList, incomeList, allList] );
+
+    ENTRY_LIST.forEach( (entry, index) => {
+        if( entry.type === "expense") {
+            showEntry(expenseList, entry.type, entry.title, entry.amount, index)
+        } else if(entry.type === "income") {
+            showEntry(incomeList, entry.type, entry.title, entry.amount, index)
+        }
+        showEntry(allList, entry.type, entry.title, entry.amount, index)
+    });
+}
+
+function showEntry(list, type, title, amount, id) {
+    const entry = `<li id= "${id}" class="${type}">
+                        <div class= "entry">${title}: $${amount}</div>
+                        <button id="edit">Edit</button>
+                        <button id="delete">Delete</button>
+                    </li>`
+    const position = "afterbegin";
+
+    list.insertAdjacentHTML(position, entry);
+}
+
+function clearElement(elements) {
+    elements.forEach( element => {
+        element.innerHTML = "";
+    })
 }
 
 function clearInput(inputs) {
@@ -108,12 +144,12 @@ addExpense.addEventListener("click", function(){
     let expense = {
         type : "expense",
         title : expenseTitle.value,
-        amount : expenseAmount.value
+        amount : parseFloat(expenseAmount.value)
     }
     ENTRY_LIST.push(expense);
 
     updateUI(); 
-    clearInput([expenseTitle.value, expenseAmount.value]);
+    clearInput([expenseTitle, expenseAmount]);
     console.log(ENTRY_LIST);
 });
 
@@ -124,11 +160,11 @@ addIncome.addEventListener("click", function(){
     let income = {
         type : "income",
         title : incomeTitle.value,
-        amount : incomeAmount.value
+        amount : parseFloat(incomeAmount.value)
     }
     ENTRY_LIST.push(income);
 
     updateUI();  
-    clearInput([incomeTitle.value, incomeAmount.value]);
+    clearInput([incomeTitle, incomeAmount]);
     console.log(ENTRY_LIST);
 });
