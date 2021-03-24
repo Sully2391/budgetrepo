@@ -82,4 +82,22 @@ addExpense.addEventListener("click", function(){
         amount : expenseAmount.value
     }
     ENTRY_LIST.push(expense);
+
+    updateUI(); //this function to be defined ****
+    clearInput([expenseTitle.value, expenseAmount.value]);
+});
+
+addIncome.addEventListener("click", function(){
+    //do not run if either input is empty
+    if( incomeTitle.value === '' || incomeAmount.value === '' ) return;
+    // add/save entry to list
+    let income = {
+        type : "income",
+        title : incomeTitle.value,
+        amount : incomeAmount.value
+    }
+    ENTRY_LIST.push(income);
+
+    updateUI();  //this function to be defined ****
+    clearInput([incomeTitle.value, incomeAmount.value]);
 });
