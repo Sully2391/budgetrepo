@@ -26,6 +26,9 @@ const addExpense= document.querySelector(".add-expense");
 const expenseTitle = document.getElementById("expense-title-input");
 const expenseAmount = document.getElementById("expense-amount-input");
 
+//VARIABLES
+let ENTRY_LIST = [];
+
 //FUNCTIONS FOR TOGGLE
 function active( element ){
     element.classList.add("active");
