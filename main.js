@@ -168,3 +168,25 @@ addIncome.addEventListener("click", function(){
     clearInput([incomeTitle, incomeAmount]);
     console.log(ENTRY_LIST);
 });
+
+//FUNCTIONS FOR EDITS/REMOVAL
+function deleteOrEdit(event) {
+    const targetBtn = event.target;
+    const entry = targetBtn.parentNode;
+
+    if( targetBtn.id === DELETE ) {
+        deleteEntry(entry);
+    } else if( targetBtn.id === EDIT ) {
+        editEntry(entry);
+    }
+}
+
+function deleteEntry(entry) {
+
+}
+
+function editEntry(entry) {
+
+}
+
+//EVENT LISTENERS FOR EDITS/REMOVAL
