@@ -169,6 +169,8 @@ addIncome.addEventListener("click", function(){
     console.log(ENTRY_LIST);
 });
 
+
+
 //FUNCTIONS FOR EDITS/REMOVAL
 function deleteOrEdit(event) {
     const targetBtn = event.target;
@@ -182,11 +184,25 @@ function deleteOrEdit(event) {
 }
 
 function deleteEntry(entry) {
-
+    ENTRY_LIST.splice( entry.id );
+    updateUI();
 }
 
 function editEntry(entry) {
+    let ENTRY = ENTRY_LIST[entry.id];
 
+    if(ENTRY.type === "income") {
+        incomeAmount.value = ENTRY.amount;
+        incomeTitle.value = ENTRY.title;
+    } else if (ENTRY.type === "expense") {
+        expenseAmount.value = ENTRY.amount;
+        expenseTitle.value = ENTRY.title;
+    }
+
+    deleteEntry(entry);
 }
 
 //EVENT LISTENERS FOR EDITS/REMOVAL
+incomeList.addEventListener("click", deleteOrEdit);
+expenseList.addEventListener("click", deleteOrEdit);
+allList.addEventListener("click", deleteOrEdit);
