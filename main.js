@@ -1,8 +1,8 @@
 // SELECTING ELEMENTS//
 //BUDGET DISPLAY ELEMENTS --------
 const balanceEl = document.querySelector(".balance .value");
-const incomeTotalEl = document.querySelector(".outcome-total");
-const outcomeTotalEl = document.querySelector(".income-total");
+const incomeTotalEl = document.querySelector(".income-total");
+const outcomeTotalEl = document.querySelector(".outcome-total");
 //BUDGET DASHBOARD ELEMENTS -------
 //dashboard buttons
 const expenseBtn = document.querySelector(".tab1");
