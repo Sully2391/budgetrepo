@@ -95,7 +95,7 @@ function updateUI(){
         } else if(entry.type === "income") {
             showEntry(incomeList, entry.type, entry.title, entry.amount, index)
         }
-        showEntry(allList, entry.type, entry.title, entry.amount, index)
+    showEntry(allList, entry.type, entry.title, entry.amount, index)
     });
 }
 
