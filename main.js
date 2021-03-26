@@ -79,6 +79,8 @@ function updateUI(){
     outcome = calculateTotal("expense", ENTRY_LIST);
     balance = Math.abs(calculateBalance(income, outcome));
 
+    console.log(balance);
+
     //determine sign of balance
     let sign = (income >= outcome) ? "$" : "-$"
 
@@ -140,7 +142,7 @@ function calculateBalance(income, outcome) {
 addExpense.addEventListener("click", function(){
     //do not run if either input is empty
     if( expenseTitle.value === '' || expenseAmount.value === '' ) return;
-    // add/save entry to list
+    // add entry to list
     let expense = {
         type : "expense",
         title : expenseTitle.value,
