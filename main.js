@@ -79,10 +79,13 @@ function updateUI(){
     outcome = calculateTotal("expense", ENTRY_LIST);
     balance = Math.abs(calculateBalance(income, outcome));
 
+    console.log(income);
+    console.log(outcome);
     console.log(balance);
 
     //determine sign of balance
     let sign = (income >= outcome) ? "$" : "-$"
+    console.log(sign);
 
     //updateUI
     balanceEl.innerHTML = `<small>${sign}</small>${balance.toFixed(2)}`;
