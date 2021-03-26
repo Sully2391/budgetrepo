@@ -83,7 +83,7 @@ function updateUI(){
     let sign = (income >= outcome) ? "$" : "-$"
 
     //updateUI
-    balanceEl.innerHTML = `<small>${sign}</small>${balance}`;
+    balanceEl.innerHTML = `<small>${sign}</small>${balance.toFixed(2)}`;
     outcomeTotalEl.innerHTML = `<small>$</small>${outcome}`;
     incomeTotalEl.innerHTML = `<small>$</small>${income}`;
 
@@ -101,7 +101,7 @@ function updateUI(){
 
 function showEntry(list, type, title, amount, id) {
     const entry = `<li id= "${id}" class="${type}">
-                        <div class= "entry">${title}: $${amount}</div>
+                        <div class= "entry">${title}: $${amount.toFixed(2)}</div>
                         <div id="edit"><img src= "icons/edit-icon.png"></div>
                         <div id="delete"><img src= "icons/delete-icon.png"></div>
                     </li>`
@@ -129,7 +129,7 @@ function calculateTotal (type, list) {
             sum += entry.amount;
         }
     })
-    return sum;
+    return sum.toFixed(2);
 }
 
 function calculateBalance(income, outcome) {
