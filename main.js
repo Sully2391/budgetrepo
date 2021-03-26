@@ -77,31 +77,28 @@ allBtn.addEventListener('click', function(){
 function updateUI(){
     income = calculateTotal("income", ENTRY_LIST);
     outcome = calculateTotal("expense", ENTRY_LIST);
-    balance = Math.abs(calculateBalance(income, outcome));
-
-    console.log(income);
-    console.log(outcome);
-    console.log(balance);
+    balance = Math.abs( calculateBalance(income, outcome) );
 
     //determine sign of balance
-    let sign = (income >= outcome) ? "$" : "-$"
-    console.log(sign);
+    let sign = (parseFloat(income) >= parseFloat(outcome) ) ? "$" : "-$";
 
     //updateUI
     balanceEl.innerHTML = `<small>${sign}</small>${balance.toFixed(2)}`;
     outcomeTotalEl.innerHTML = `<small>$</small>${outcome}`;
     incomeTotalEl.innerHTML = `<small>$</small>${income}`;
 
-    clearElement( [expenseList, incomeList, allList] );
+    clearElement( [incomeList, expenseList, allList] );
 
     ENTRY_LIST.forEach( (entry, index) => {
-        if( entry.type === "expense") {
-            showEntry(expenseList, entry.type, entry.title, entry.amount, index)
-        } else if(entry.type === "income") {
-            showEntry(incomeList, entry.type, entry.title, entry.amount, index)
+        if( entry.type === "income") {
+            showEntry(incomeList, entry.type, entry.title, entry.amount, index);
+        } else if(entry.type === "expense") {
+            showEntry(expenseList, entry.type, entry.title, entry.amount, index);
         }
-    showEntry(allList, entry.type, entry.title, entry.amount, index)
+        showEntry(allList, entry.type, entry.title, entry.amount, index);
     });
+
+    console.log(`income is ${income}, outcome:${outcome}, balance ${sign} ${balance}`);
 }
 
 function showEntry(list, type, title, amount, id) {
@@ -179,32 +176,32 @@ addIncome.addEventListener("click", function(){
 //FUNCTIONS FOR EDITS/REMOVAL
 function deleteOrEdit(event) {
     const targetBtn = event.target;
-    const entry = targetBtn.parentNode;
+    const ENTRY = targetBtn.parentNode;
 
     if( targetBtn.id === DELETE ) {
-        deleteEntry(entry);
+        deleteEntry(ENTRY);
     } else if( targetBtn.id === EDIT ) {
-        editEntry(entry);
+        editEntry(ENTRY);
     }
 }
 
-function deleteEntry(entry) {
-    ENTRY_LIST.splice( entry.id );
+function deleteEntry(ENTRY) {
+    ENTRY_LIST.splice( ENTRY.id, 1 );
     updateUI();
 }
 
-function editEntry(entry) {
-    let ENTRY = ENTRY_LIST[entry.id];
+function editEntry(ENTRY) {
+    let entry = ENTRY_LIST[ENTRY.id];
 
-    if(ENTRY.type === "income") {
-        incomeAmount.value = ENTRY.amount;
-        incomeTitle.value = ENTRY.title;
-    } else if (ENTRY.type === "expense") {
-        expenseAmount.value = ENTRY.amount;
-        expenseTitle.value = ENTRY.title;
+    if(entry.type === "income") {
+        incomeAmount.value = entry.amount;
+        incomeTitle.value = entry.title;
+    } else if (entry.type === "expense") {
+        expenseAmount.value = entry.amount;
+        expenseTitle.value = entry.title;
     }
 
-    deleteEntry(entry);
+    deleteEntry(ENTRY);
 }
 
 //EVENT LISTENERS FOR EDITS/REMOVAL
