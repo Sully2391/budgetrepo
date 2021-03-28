@@ -16,3 +16,5 @@ function getQuote(){
         console.log(err);
     });
 }
+
+getQuote();
