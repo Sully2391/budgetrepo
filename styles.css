@@ -26,7 +26,7 @@ main {
     border: 3px inset #D0CCD0;
     border-radius: 25px;
     padding: 10px;
-    background-color: #1c6e8c;
+    background-color: #605856;
     font-family: 'Cinzel', serif;
     font-size: .9em;
     font-kerning: none;
@@ -36,10 +36,10 @@ main {
     box-shadow: 0 15px 20px -12px rgba(0,0,0, .8);
 }
 #quotegen {
-    background-color: #D0CCD0;
+    background-color: #274156;
     border-radius: 10px;
     border: none;
-    color: #274156;
+    color: #fbfcff;
     padding: 5px 16px;
     font-size: 1em;
     font-family: 'Cinzel', serif;
@@ -75,7 +75,10 @@ main {
         }
 /* BUDGET DASHBOARD */
 .budget-dashboard {
-
+    background-color: #1c6e8c;
+    border: 3px solid #d0ccd0;
+    border-radius: 25px;
+    color: #fbfcff;
 }
         /* budget dashboard toggling */
 
@@ -83,7 +86,10 @@ main {
 
     }
     .toggle {
-
+        
+    }
+    .tab1, #expense, .outcome {
+        color: #cc3628;
     }
     .active {
         opacity : 1;
@@ -99,7 +105,7 @@ main {
         overflow-x:hidden;
     }
     .list {
-
+        
     }
         .input {
             width: 100px;
