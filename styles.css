@@ -1,14 +1,100 @@
-/* budget dashboard toggling */
-.active {
-    opacity : 1;
+* {
+    box-sizing: border-box;
+    text-align: center;
 }
 
-.hide {
-    display: none;
+h1 {
+    color: #1C6E8C;
+    padding: 40px 10px;
+    font-size: 2em;
+    font-weight: inherit;
+    margin: 0 auto;
+    border-bottom: solid 2px #274156;
 }
 
-.scroll {
-    height: 150px;
-    overflow:scroll;
-    overflow-x:hidden;
+main {
+    background-color: #274156;
 }
+
+
+/* quote block */
+.quote-container {
+    border: 3px inset #D0CCD0;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #1c6e8c;
+    font-family: "papyrus";
+    font-size: 1em;
+    text-align: center;
+    margin: auto;
+    color: #FBFCFF;
+    box-shadow: 0 15px 20px -12px rgba(0,0,0, .8);
+}
+#quotegen {
+    background-color: #D0CCD0;
+    border-radius: 10px;
+    border: none;
+    color: #274156;
+    padding: 5px 16px;
+    font-size: 1em;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* BUDGET BLOCK */
+.budget-container {
+    background-color: #FBFCFF;
+    color: #274156;
+}
+/* BUDGET DISPLAY */
+.budget-display {
+    
+}
+
+    .account {
+        
+    }
+
+        .income {
+
+        }
+        .income-total{
+
+        }
+        .outcome {
+
+        }
+        .outcome-total {
+
+        }
+/* BUDGET DASHBOARD */
+.budget-dashboard {
+
+}
+        /* budget dashboard toggling */
+
+    .dash-title {
+
+    }
+    .toggle {
+
+    }
+    .active {
+        opacity : 1;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .scroll {
+        height: 150px;
+        overflow:scroll;
+        overflow-x:hidden;
+    }
+    .list {
+
+    }
+        .input {
+            width: 100px;
+        }

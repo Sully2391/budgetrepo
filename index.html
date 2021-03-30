@@ -7,7 +7,7 @@
     <title>BudgetApp</title>
 </head>
 <body>
-    <header>Budgetspiration</header>
+    <header><h1>Budgetspiration</h1></header>
         <main>
             <!-- QUOTE BLOCK HERE -->
             <section class= "quote-container">
@@ -23,52 +23,52 @@
             </section>
             <!-- BUDGET BLOCK BELOW -->
             <section class="budget-container">
-                <h2>Budget</h2>
-                    <section class="budget-display">
-                        <div class="balance">
-                            <span class="title">Balance</span><br> 
-                            <span class="value"></span>
+                <section class="budget-display">
+                    <h2>Budget</h2>
+                   <div class="balance">
+                        <span class="title">Balance</span><br> 
+                        <span class="value"></span>
+                    </div>
+                    <div class="account">
+                        <div class="income">
+                            <span class="title">Income</span><br>
+                            <span class="income-total"></span>
                         </div>
-                        <div class="account">
-                            <div class="income">
-                                <span class="title">Income</span><br>
-                                <span class="income-total"></span>
-                            </div>
-                            <div class="outcome">
-                                <span class="title">Outcome</span><br>
-                                <span class="outcome-total"></span>
-                            </div>
+                        <div class="outcome">
+                            <span class="title">Outcome</span><br>
+                            <span class="outcome-total"></span>
                         </div>
-                    </section>
-                    <section class="budget-dashboard">
-                        <h3 class="dash-title">Dashboard</h3>
-                        <div class="toggle">
-                            <span class="tab1">Expenses</span>
-                            <span class="tab2 active">Income</span>
-                            <span class="tab3">All</span>
-                        </div>
+                    </div>
+                </section>
+                <section class="budget-dashboard">
+                    <h3 class="dash-title">Dashboard</h3>
+                    <div class="toggle">
+                        <span class="tab1">Expenses</span>
+                        <span class="tab2 active">Income</span>
+                        <span class="tab3">All</span>
+                    </div>
                         <!-- LISTS BELOW -->
-                        <div class="hide" id="expense">
-                            <ul class="list scroll"></ul>
-                            <div class="input">
-                                <input type="text" id="expense-title-input" name="title" placeholder="title">
-                                <input type="number" id="expense-amount-input" name="amount" placeholder="$0">
-                                <div class="add-expense"><img src="icons/add-icon.png"></div>
-                            </div>
+                    <div class="hide" id="expense">
+                        <ul class="list scroll"></ul>
+                        <div class="input">
+                            <input type="text" id="expense-title-input" name="title" placeholder="title">
+                            <input type="number" id="expense-amount-input" name="amount" placeholder="$0">
+                            <div class="add-expense"><img src="icons/add-icon.png"></div>
                         </div>
-                        <div class="hide" id="income">
-                            <ul class="list scroll"></ul>
-                            <div class="input">
-                                <input type="text" id="income-title-input" name="title" placeholder="title">
-                                <input type="number" id="income-amount-input" name="amount" placeholder="$0">
-                                <div class="add-income"><img src="icons/add-icon.png"></div>
-                            </div>
+                    </div>
+                    <div class="hide" id="income">
+                        <ul class="list scroll"></ul>
+                        <div class="input">
+                            <input type="text" id="income-title-input" name="title" placeholder="title">
+                            <input type="number" id="income-amount-input" name="amount" placeholder="$0">
+                            <div class="add-income"><img src="icons/add-icon.png"></div>
                         </div>
-                        <div id="all">
-                            <ul class="list scroll"></ul>
-                        </div>
-                        </div>
-                    </section>
+                    </div>
+                    <div id="all">
+                        <ul class="list scroll"></ul>
+                    </div>
+                    </div>
+                </section>
             </section>
         </main>
     <footer></footer>
