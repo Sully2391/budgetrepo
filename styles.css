@@ -5,10 +5,11 @@
 
 body {
     font-family: 'Alfa Slab One', cursive;
+    background-color: #274156;
 }
 
 h1 {
-    color: #1C6E8C;
+    color: #fbfcff;
     padding: 40px 10px;
     font-size: 2em;
     font-weight: inherit;
@@ -17,7 +18,7 @@ h1 {
 }
 
 main {
-    background-color: #274156;
+
 }
 
 
@@ -50,6 +51,7 @@ main {
 /* BUDGET BLOCK */
 .budget-container {
     background-color: #FBFCFF;
+    border-radius: 25px;
     color: #274156;
 }
 /* BUDGET DISPLAY */
@@ -105,8 +107,34 @@ main {
         overflow-x:hidden;
     }
     .list {
-        
+
     }
+
         .input {
-            width: 100px;
+
         }
+        #income-title-input,
+        #expense-title-input {
+            height: 20px;
+            width : 150px;
+            font-size: 1em;
+            font-family: 'Alfa Slab One', cursive, sans-serif;
+            border-radius: 10px 0 0 10px;
+            border: none;
+        }
+        #income-amount-input,
+        #expense-amount-input {
+            height: 20px;
+            width: 150px;
+            font-size: 1em;
+            font-family: 'Alfa Slab One', cursive, sans-serif;
+            border-radius: 0 10px 10px 0;
+        }
+        
+            .entry {
+                text-align:start;
+            }
+            #edit,
+            #delete {
+                position: right;
+            }
