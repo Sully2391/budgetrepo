@@ -146,12 +146,12 @@ main {
                 position:relative;
                 left: 60px;
                 margin: 0 5px;
-                border: 2px inset #605856;
+                border: 2px solid #fbfcff;
                 border-radius: 20px;
                 font-family: 'Alfa Slab One', cursive, sans-serif;
                 font-size: .75em;
-                color: #274156;
-                background-color: #fbfcff;
+                color: #fbfcff;
+                background-color: #605856;
             }
 
 /* MEDIA QUERIES */
