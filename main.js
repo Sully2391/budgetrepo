@@ -27,10 +27,14 @@ const expenseTitle = document.getElementById("expense-title-input");
 const expenseAmount = document.getElementById("expense-amount-input");
 
 //VARIABLES
-let ENTRY_LIST = [];
+let ENTRY_LIST;
 let balance = 0, income = 0, outcome = 0;
 
 const DELETE = "delete", EDIT = "edit";
+
+//checking for saved data
+ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
+updateUI();
 
 //FUNCTIONS FOR TOGGLE
 function active( element ){
@@ -98,7 +102,7 @@ function updateUI(){
         showEntry(allList, entry.type, entry.title, entry.amount, index);
     });
 
-    console.log(`income is ${income}, outcome:${outcome}, balance ${sign} ${balance}`);
+    localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
 
 function showEntry(list, type, title, amount, id) {
