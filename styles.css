@@ -36,9 +36,10 @@ main {
     font-size: .9em;
     font-kerning: none;
     text-align: center;
-    margin: auto;
+    margin: auto auto 20px auto;
+    width: 85%;
     color: #FBFCFF;
-    box-shadow: 0 15px 20px -12px rgba(0,0,0, .8);
+    box-shadow: 0 15px 25px -10px #D0CCD0;
 }
 #quotegen {
     background-color: #274156;
@@ -59,13 +60,9 @@ main {
     color: #274156;
 }
 /* BUDGET DISPLAY */
-.budget-display {
-    
+.balance {
+    font-size: 1.15em;
 }
-
-    .account {
-        
-    }
 
         .income {
 
@@ -150,19 +147,30 @@ main {
             }
 
 /* MEDIA QUERIES */
+@media(max-width: 599px) {
+    .balance {
+        margin-bottom: 10px;
+    }
+    .inc-media1,
+    .out-media1 {
+        display: inline-block;
+    }
+
+    .inc-media1 {
+        width: 25%;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .out-media1 {
+        width: 25%;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }   
+}
 
 @media (min-width: 600px) {
-    /* #flex-wrap {
-        display: flex;
-        flex-direction: row-reverse;
-    }
+    
 
-    .quote-container {
-
-    }
-    .budget-container {
-
-    } */
     #flex-wrap2 {
         display: flex;
     }
@@ -181,4 +189,22 @@ main {
    
 
 
-@media (min-width: 980px)
+@media (min-width: 900px) {
+    #flex-wrap {
+            display: flex;
+        }
+
+        .quote-container {
+            width: 40%;
+            margin: auto 15px auto auto;
+        }
+        .budget-container {
+            width: 60%;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        .budget-dashboard {
+            margin-right: 10px;
+        }
+}
