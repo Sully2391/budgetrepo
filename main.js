@@ -3,6 +3,8 @@
 const balanceEl = document.querySelector(".balance .value");
 const incomeTotalEl = document.querySelector(".income-total");
 const outcomeTotalEl = document.querySelector(".outcome-total");
+
+const saveBtn = document.querySelector('#save-btn');
 //BUDGET DASHBOARD ELEMENTS -------
 //dashboard buttons
 const expenseBtn = document.querySelector(".tab1");
@@ -35,6 +37,9 @@ const DELETE = "delete", EDIT = "edit";
 //checking for saved data
 ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
 updateUI();
+
+//event listener for save
+saveBtn.addEventListener('click', (e) => localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST)) );
 
 //FUNCTIONS FOR TOGGLE
 function active( element ){
@@ -101,8 +106,6 @@ function updateUI(){
         }
         showEntry(allList, entry.type, entry.title, entry.amount, index);
     });
-
-    localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
 
 function showEntry(list, type, title, amount, id) {

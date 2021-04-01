@@ -64,6 +64,15 @@ main {
     font-size: 1.15em;
 }
 
+#save-btn {
+    border: 2px inset #D0CCD0;
+    border-radius: 20px;
+    font-family: 'Alfa Slab One', cursive, sans-serif;
+    font-size: 1em;
+    color: #fbfcff;
+    background-color: #274156;
+}
+
         .income {
 
         }
