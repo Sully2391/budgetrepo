@@ -159,6 +159,15 @@ h1 {
         margin-left: 10px;
         margin-bottom: 5px;
     }   
+
+    #quotegen {
+        margin-bottom: 10px;
+    }
+
+    #edit,
+    #delete {
+        
+    }
 }
 
 @media (min-width: 600px) {
@@ -166,6 +175,10 @@ h1 {
 
     #flex-wrap2 {
         display: flex;
+    }
+
+    .budget-container {
+        margin-top: 50px;
     }
 
     .budget-display {
@@ -190,11 +203,13 @@ h1 {
         .quote-container {
             width: 40%;
             margin: auto 15px auto auto;
+            margin-top: 50px;
         }
         .budget-container {
             width: 60%;
             padding-top: 25px;
             padding-bottom: 25px;
+            margin-top: 50px;
         }
 
         .budget-dashboard {
